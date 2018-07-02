@@ -14,7 +14,7 @@ In general a query with `query` keyword and a query without `query` keyword alwa
   }
 }`
 
-`{
+`query {
   company(id: "2") {
     description
     name
@@ -25,3 +25,16 @@ In general a query with `query` keyword and a query without `query` keyword alwa
 }`
 
 Both these queries gives the same result. But main importance of `query` keyword comes when we name a query. We can name the query using `query` keyword , so that we can reuse it at frontend.
+
+Query with name:
+
+`query commpanyWithUsers{
+  company(id: "2") {
+    description
+    name
+    users{
+      firstName
+    }
+  }
+}`
+
