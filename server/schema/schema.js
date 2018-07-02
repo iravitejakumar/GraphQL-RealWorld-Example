@@ -19,7 +19,7 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLString } },
       /**
        * Reolve can handle a promise.
-       * It can be from data base or any other data source.
+       * It can be from data base or any other 3rd party data source or server.
        */
       resolve(parentValue, args) {
         return axios
