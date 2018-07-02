@@ -63,7 +63,7 @@ Lets say we are writing same properties repeatedly for querying a type like comp
 }
 ```
 
-we can use define id, description and name properties in a fragment and reuse them as follows:
+we can use define `id`, `description` and `name` properties in a fragment and reuse them as follows:
 
 ```
 {
@@ -81,3 +81,7 @@ fragment companyDetails on Company {
   name
 }
 ```
+
+## What are mutations in GraphQL?
+
+To make any modifications for the types we go for mutations in GraphQL. Generally we will use it for `POST`, `PUT` and `DELETE`
