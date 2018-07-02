@@ -28,7 +28,7 @@ query {
 }
 ```
 
-Both these queries gives the same result. But main importance of `query` keyword comes when we name a query. We can name the query using `query` keyword , so that we can reuse it at frontend.
+Both these queries gives the same result. But main importance of `query` keyword is it gives us ability to name the query, so that we can reuse it in frontend code.
 
 ##### Query with name:
 
@@ -41,5 +41,43 @@ query commpanyWithUsers{
       firstName
     }
   }
+}
+```
+
+## What is the use of fragments in GraphQL?
+
+Lets say we are writing same properties repeatedly for querying a type like company shown below.
+
+```
+{
+  pramati: company(id: "2") {
+    id
+    description
+    name
+  }
+  apple: company(id: "1") {
+    id
+    description
+    name
+  }
+}
+```
+
+we can use define id, description and name properties in a fragment and reuse them as follows:
+
+```
+{
+  pramati: company(id: "2") {
+    ...companyDetails
+  }
+  apple: company(id: "1") {
+    ...companyDetails
+  }
+}
+
+fragment companyDetails on Company {
+  id
+  description
+  name
 }
 ```
